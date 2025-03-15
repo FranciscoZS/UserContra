@@ -40,6 +40,8 @@ namespace ContraJudia
             {
                 PasswordEntry.Text = string.Empty;
                 ErrorMessageLabel.IsVisible = true;
+                PasswordEntry.IsPassword = true;
+                TogglePasswordButton.Text = "👁";
             }
         }
     }
