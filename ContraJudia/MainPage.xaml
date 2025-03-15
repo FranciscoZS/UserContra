@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContraJudia.MainPage">
+
+    <ScrollView>
+        <!-- VerticalStackLayout centrado y con márgenes -->
+            <VerticalStackLayout VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Spacing="20"
+                             Padding="30">
+
+                <!-- Imagen centrada -->
+                <Image Source="C:\Users\franc\source\repos\ContraJudia\ContraJudia\Resources\Images\kylejew.gif"
+                   Aspect="AspectFill"
+                   HeightRequest="150"
+                   WidthRequest="150"
+                   HorizontalOptions="Center" />
+
+                <!-- Campo de usuario -->
+                <Label Text="Usuario"
+                   FontSize="Medium"
+                   HorizontalOptions="Start" />
+            <Entry x:Name="UserEntry"
+                   Placeholder="Ingrese su usuario"
+                   WidthRequest="300"
+                   HorizontalOptions="Center" />
+
+                <!-- Campo de contraseña con botón de mostrar/ocultar -->
+                <Label Text="Contraseña"
+                   FontSize="Medium"
+                   HorizontalOptions="Start" />
+                <Grid WidthRequest="300"
+                  HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Entry x:Name="PasswordEntry"
+                       Placeholder="Ingrese su contraseña"
+                       IsPassword="True"
+                       Grid.Column="0" />
+
+                    <Button x:Name="TogglePasswordButton"
+                        Text="👁"
+                        Clicked="OnTogglePasswordButtonClicked"
+                        Grid.Column="1"
+                        BackgroundColor="Transparent"
+                        BorderWidth="0" />
+                </Grid>
+
+                <!-- Mensaje de error -->
+                <Label x:Name="ErrorMessageLabel"
+                   Text="Usuario o contraseña incorrecto"
+                   TextColor="Red"
+                   FontSize="Small"
+                   IsVisible="False" 
+                    HorizontalOptions="Center" />
+
+                    <!-- Botones de acción -->
+                    <HorizontalStackLayout Spacing="20"
+                                    HorizontalOptions="Center">
+                        <Button Text="Borrar"
+                        WidthRequest="120"
+                        Clicked="OnClearButtonClicked" />
+
+                        <Button Text="Ingresar"
+                        WidthRequest="120"
+                        Clicked="OnLoginButtonClicked" />
+                    </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+</ContentPage>
