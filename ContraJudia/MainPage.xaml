@@ -5,20 +5,20 @@
 
     <ScrollView>
         <!-- VerticalStackLayout centrado y con márgenes -->
-            <VerticalStackLayout VerticalOptions="Center"
+        <VerticalStackLayout VerticalOptions="Center"
                              HorizontalOptions="Center"
                              Spacing="20"
                              Padding="30">
 
-                <!-- Imagen centrada -->
-                <Image Source="C:\Users\franc\source\repos\ContraJudia\ContraJudia\Resources\Images\kylejew.gif"
+            <!-- Imagen centrada -->
+            <Image Source="C:\Users\franc\source\repos\ContraJudia\ContraJudia\Resources\Images\kylejew.gif"
                    Aspect="AspectFill"
                    HeightRequest="150"
                    WidthRequest="150"
                    HorizontalOptions="Center" />
 
-                <!-- Campo de usuario -->
-                <Label Text="Usuario"
+            <!-- Campo de usuario -->
+            <Label Text="Usuario"
                    FontSize="Medium"
                    HorizontalOptions="Start" />
             <Entry x:Name="UserEntry"
@@ -26,49 +26,53 @@
                    WidthRequest="300"
                    HorizontalOptions="Center" />
 
-                <!-- Campo de contraseña con botón de mostrar/ocultar -->
-                <Label Text="Contraseña"
+            <!-- Campo de contraseña con botón de mostrar/ocultar -->
+            <Label Text="Contraseña"
                    FontSize="Medium"
                    HorizontalOptions="Start" />
-                <Grid WidthRequest="300"
+            <Grid WidthRequest="300"
                   HorizontalOptions="Center">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-                    <Entry x:Name="PasswordEntry"
+                <Entry x:Name="PasswordEntry"
                        Placeholder="Ingrese su contraseña"
                        IsPassword="True"
                        Grid.Column="0" />
 
-                    <Button x:Name="TogglePasswordButton"
+                <Button x:Name="TogglePasswordButton"
                         Text="👁"
                         Clicked="OnTogglePasswordButtonClicked"
                         Grid.Column="1"
                         BackgroundColor="Transparent"
                         BorderWidth="0" />
-                </Grid>
+            </Grid>
 
-                <!-- Mensaje de error -->
-                <Label x:Name="ErrorMessageLabel"
+            <!-- Mensaje de error -->
+            <Label x:Name="ErrorMessageLabel"
                    Text="Usuario o contraseña incorrecto"
                    TextColor="Red"
                    FontSize="Small"
                    IsVisible="False" 
-                    HorizontalOptions="Center" />
+                   HorizontalOptions="Center" />
 
-                    <!-- Botones de acción -->
-                    <HorizontalStackLayout Spacing="20"
+            <!-- Botones de acción -->
+            <HorizontalStackLayout Spacing="20"
                                     HorizontalOptions="Center">
-                        <Button Text="Borrar"
+                <Button Text="Borrar"
                         WidthRequest="120"
                         Clicked="OnClearButtonClicked" />
 
-                        <Button Text="Ingresar"
+                <Button Text="Ingresar"
                         WidthRequest="120"
                         Clicked="OnLoginButtonClicked" />
-                    </HorizontalStackLayout>
-            </VerticalStackLayout>
-        </ScrollView>
+
+                <Button Text="SignUp"
+                        WidthRequest="120"
+                        Clicked="OnSignUpButtonClicked" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

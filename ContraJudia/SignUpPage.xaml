@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContraJudia.SignUpPage">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Spacing="20"
+                             Padding="30">
+
+            <!-- Campo de nombre de usuario -->
+            <Label Text="Nombre de Usuario"
+                   FontSize="Medium"
+                   HorizontalOptions="Start" />
+            <Entry x:Name="UsernameEntry"
+                   Placeholder="Ingrese su nombre de usuario"
+                   WidthRequest="300"
+                   HorizontalOptions="Center" />
+
+            <!-- Campo de contraseña con botón de mostrar/ocultar -->
+            <Label Text="Contraseña"
+                   FontSize="Medium"
+                   HorizontalOptions="Start" />
+            <Grid WidthRequest="300"
+                  HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Entry x:Name="PasswordEntry"
+                       Placeholder="Ingrese su contraseña"
+                       IsPassword="True"
+                       Grid.Column="0"
+                       TextChanged="OnPasswordTextChanged" />
+
+                <Button x:Name="TogglePasswordButton"
+                        Text="👁"
+                        Clicked="OnTogglePasswordButtonClicked"
+                        Grid.Column="1"
+                        BackgroundColor="Transparent"
+                        BorderWidth="0" />
+            </Grid>
+
+            <!-- Campo de confirmación de contraseña con botón de mostrar/ocultar -->
+            <Label Text="Confirmar Contraseña"
+                   FontSize="Medium"
+                   HorizontalOptions="Start" />
+            <Grid WidthRequest="300"
+                  HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Entry x:Name="ConfirmPasswordEntry"
+                       Placeholder="Confirme su contraseña"
+                       IsPassword="True"
+                       Grid.Column="0"
+                       TextChanged="OnPasswordTextChanged" />
+
+                <Button x:Name="ToggleConfirmPasswordButton"
+                        Text="👁"
+                        Clicked="OnToggleConfirmPasswordButtonClicked"
+                        Grid.Column="1"
+                        BackgroundColor="Transparent"
+                        BorderWidth="0" />
+            </Grid>
+
+            <!-- Mensajes de validación dinámica -->
+            <Label x:Name="PasswordLengthLabel"
+                   Text="• Al menos 8 caracteres"
+                   FontSize="Small"
+                   TextColor="Gray"
+                   HorizontalOptions="Start" />
+
+            <Label x:Name="PasswordUpperLabel"
+                   Text="• Al menos una letra mayúscula"
+                   FontSize="Small"
+                   TextColor="Gray"
+                   HorizontalOptions="Start" />
+
+            <Label x:Name="PasswordLowerLabel"
+                   Text="• Al menos una letra minúscula"
+                   FontSize="Small"
+                   TextColor="Gray"
+                   HorizontalOptions="Start" />
+
+            <Label x:Name="PasswordNumberLabel"
+                   Text="• Al menos un número"
+                   FontSize="Small"
+                   TextColor="Gray"
+                   HorizontalOptions="Start" />
+
+            <!-- Mensaje de error general -->
+            <Label x:Name="ErrorMessageLabel"
+                   Text=""
+                   TextColor="Red"
+                   FontSize="Small"
+                   IsVisible="False"
+                   HorizontalOptions="Center" />
+
+            <!-- Botón de registro -->
+            <Button Text="Registrarse"
+                    WidthRequest="120"
+                    Clicked="OnSignUpButtonClicked"
+                    HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
